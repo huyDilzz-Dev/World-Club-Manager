@@ -1,4 +1,7 @@
-crequire("dotenv").config();
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+
 const express = require("express");
 const cors = require("cors");
 
@@ -14,6 +17,7 @@ app.use("/auth", require("./routes/auth"));
 app.use("/user", require("./routes/users"));
 app.use("/game", require("./routes/clubs"));
 
-app.listen(process.env.PORT, () =>
-  console.log("Server running on port " + process.env.PORT)
-);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () =>
+  console.log("Server running on port " + POR
+iPORn
